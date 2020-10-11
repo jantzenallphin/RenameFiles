@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenameFiles", "RenameFiles\RenameFiles.csproj", "{DE36513B-1AD4-4867-A2BC-923DDD2EB0A9}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RenameFilesWizard", "RenameFilesWizard\RenameFilesWizard.vdproj", "{E20CFEE8-CFC7-48C4-9087-EBC91F4C631A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{DE36513B-1AD4-4867-A2BC-923DDD2EB0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE36513B-1AD4-4867-A2BC-923DDD2EB0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE36513B-1AD4-4867-A2BC-923DDD2EB0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20CFEE8-CFC7-48C4-9087-EBC91F4C631A}.Debug|Any CPU.ActiveCfg = Debug
+		{E20CFEE8-CFC7-48C4-9087-EBC91F4C631A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
