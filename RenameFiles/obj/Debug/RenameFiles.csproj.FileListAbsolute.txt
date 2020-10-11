@@ -1,0 +1,10 @@
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\bin\Debug\RenameFiles.exe.config
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\bin\Debug\RenameFiles.exe
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\bin\Debug\RenameFiles.pdb
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.csprojAssemblyReference.cache
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.Form1.resources
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.Properties.Resources.resources
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.csproj.GenerateResource.cache
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.csproj.CoreCompileInputs.cache
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.exe
+C:\Users\Jantzen\source\repos\RenameFiles\RenameFiles\obj\Debug\RenameFiles.pdb
