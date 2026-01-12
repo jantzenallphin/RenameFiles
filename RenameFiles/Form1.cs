@@ -31,7 +31,7 @@ namespace RenameFiles
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    string[] files = Directory.GetFiles(fbd.SelectedPath);
+                    string[] files = System.IO.Directory.GetFiles(fbd.SelectedPath);
 
                     foreach (string file in files)
                         ProcessFile(file, fbd.SelectedPath);
