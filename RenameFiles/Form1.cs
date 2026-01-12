@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetadataExtractor;
+using MetadataExtractor.Formats.Exif;
 
 namespace RenameFiles
 {
     public partial class Form1 : Form
     {
         public static int count = 0;
-        private static Regex r = new Regex(":");
 
         public Form1()
         {
@@ -93,13 +92,32 @@ namespace RenameFiles
         //retrieves the datetime WITHOUT loading the whole image
         public static DateTime GetDateTakenFromImage(string path)
         {
-            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
-            using (Image myImage = Image.FromStream(fs, false, false))
+            var directories = ImageMetadataReader.ReadMetadata(path);
+            var subIfdDirectory = directories.OfType<ExifSubIfdDirectory>().FirstOrDefault();
+            
+            if (subIfdDirectory != null)
             {
-                PropertyItem propItem = myImage.GetPropertyItem(36867);
-                string dateTaken = r.Replace(Encoding.UTF8.GetString(propItem.Value), "-", 2);
-                return DateTime.Parse(dateTaken);
+                // Try Date/Time Original first (tag 0x9003)
+                if (subIfdDirectory.TryGetDateTime(ExifDirectoryBase.TagDateTimeOriginal, out DateTime dateTimeOriginal))
+                {
+                    return dateTimeOriginal;
+                }
+                
+                // Fall back to Date/Time Digitized (tag 0x9004)
+                if (subIfdDirectory.TryGetDateTime(ExifDirectoryBase.TagDateTimeDigitized, out DateTime dateTimeDigitized))
+                {
+                    return dateTimeDigitized;
+                }
+                
+                // Fall back to Date/Time (tag 0x0132)
+                if (subIfdDirectory.TryGetDateTime(ExifDirectoryBase.TagDateTime, out DateTime dateTime))
+                {
+                    return dateTime;
+                }
             }
+            
+            // If no date found, throw exception to trigger fallback filename
+            throw new Exception("No date metadata found in image");
         }
 
 
